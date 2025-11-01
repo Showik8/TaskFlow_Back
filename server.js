@@ -6,6 +6,10 @@ const path = require("path");
 const connectDB = require("./config/db");
 
 const authRoutes = require("./routes/authRoutes");
+const userRoutes = require("./routes/userRouter");
+const taskRoutes = require("./routes/taskRoutes");
+// const reportRoutes = require("./routes/reportRoutes");
+
 const app = express();
 
 app.use(
@@ -21,11 +25,9 @@ connectDB();
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
-// app.use("/api/users", userRoutes);
-// app.use("/api/task", taskRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/task", taskRoutes);
 // app.use("/api/report", reportRoutes);
-// app.use("/api/auth", authRoutes);
-// app.use("/api/auth", authRoutes);
 
 const PORT = process.env.PORT || 5000;
 
