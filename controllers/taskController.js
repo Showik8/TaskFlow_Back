@@ -1,6 +1,4 @@
-const { json } = require("stream/consumers");
 const Task = require("../models/Task");
-const { countDocuments } = require("../models/User");
 
 const getTasks = async (req, res) => {
   try {
@@ -362,7 +360,7 @@ const getUserDashboardData = async (req, res) => {
       },
       charts: {
         taskDistribution,
-        taskPrioritiesLevels,
+        taskPriorityLevels,
       },
       recentTasks,
     });
